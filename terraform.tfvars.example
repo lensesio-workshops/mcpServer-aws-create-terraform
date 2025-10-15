@@ -1,0 +1,25 @@
+# AWS Configuration
+aws_region  = "us-east-1"
+aws_profile = "default"
+
+# Network Configuration
+vpc_id    = "vpc-xxxxxxxxx"
+subnet_id = "subnet-xxxxxxxxx"  # Must be a public subnet
+
+# EC2 Configuration
+key_pair_name     = "your-key-pair-name"
+instance_type     = "m5.xlarge"
+mcp_server_count  = 15
+
+# MSK Configuration
+msk_cluster_arn = "arn:aws:kafka:us-east-1:123456789012:cluster/your-cluster-name/..."
+
+# EKS Configuration
+eks_cluster_name = "your-eks-cluster"
+
+# Lenses HQ Configuration
+lenses_api_http_url       = "http://1.2.3.4"
+lenses_api_http_port      = "8080"
+lenses_api_websocket_url  = "wss://1.2.3.4"
+lenses_api_websocket_port = "8080"
+lenses_api_key            = "sa_key_xxxxxxxxxxxxx"
