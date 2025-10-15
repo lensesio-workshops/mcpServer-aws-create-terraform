@@ -1,25 +1,59 @@
+# ==================================================
 # AWS Configuration
+# ==================================================
 aws_region  = "us-east-1"
 aws_profile = "default"
 
+# ==================================================
 # Network Configuration
-vpc_id    = "vpc-xxxxxxxxx"
-subnet_id = "subnet-xxxxxxxxx"  # Must be a public subnet
+# ==================================================
+# VPC ID where MCP servers will be deployed
+vpc_id = "vpc-xxxxxxxxx"
 
+# Subnet ID for MCP servers (must be a public subnet with internet gateway)
+subnet_id = "subnet-xxxxxxxxx"
+
+# ==================================================
 # EC2 Configuration
-key_pair_name     = "your-key-pair-name"
-instance_type     = "m5.xlarge"
-mcp_server_count  = 15
+# ==================================================
+# Name of your EC2 key pair (without .pem extension)
+key_pair_name = "your-key-pair-name"
 
+# EC2 instance type for MCP servers
+# Options: t3.medium, t3.large, m5.large, m5.xlarge, m5.2xlarge, etc.
+instance_type = "m5.xlarge"
+
+# Number of MCP servers to create
+mcp_server_count = 15
+
+# ==================================================
 # MSK Configuration
-msk_cluster_arn = "arn:aws:kafka:us-east-1:123456789012:cluster/your-cluster-name/..."
+# ==================================================
+# Full ARN of your MSK cluster
+# Format: arn:aws:kafka:REGION:ACCOUNT_ID:cluster/CLUSTER_NAME/UUID
+msk_cluster_arn = "arn:aws:kafka:us-east-1:123456789012:cluster/your-msk-cluster/abc12345-1234-1234-1234-123456789012-1"
 
+# ==================================================
 # EKS Configuration
+# ==================================================
+# Name of your EKS cluster
 eks_cluster_name = "your-eks-cluster"
 
+# ==================================================
 # Lenses HQ Configuration
-lenses_api_http_url       = "http://1.2.3.4"
-lenses_api_http_port      = "8080"
-lenses_api_websocket_url  = "wss://1.2.3.4"
+# ==================================================
+# Lenses HQ HTTP URL (without port, e.g., http://1.2.3.4 or http://lenses.example.com)
+lenses_api_http_url = "http://1.2.3.4"
+
+# Lenses HQ HTTP port
+lenses_api_http_port = "8080"
+
+# Lenses HQ WebSocket URL (use wss:// for SSL, ws:// for non-SSL)
+lenses_api_websocket_url = "wss://1.2.3.4"
+
+# Lenses HQ WebSocket port
 lenses_api_websocket_port = "8080"
-lenses_api_key            = "sa_key_xxxxxxxxxxxxx"
+
+# Lenses API key (service account key)
+# Format: sa_key_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+lenses_api_key = "sa_key_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
